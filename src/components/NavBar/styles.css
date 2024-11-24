@@ -1,0 +1,9 @@
+.containerStyle{
+    background-color: white;
+}
+.searchhview {
+    background-color: transparent;
+    border-bottom: 1px solid black;
+    border-radius: 0px;
+    margin: 5px;
+}
