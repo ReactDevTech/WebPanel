@@ -1,15 +1,12 @@
 // src/router.js
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  useRoutes,
-} from "react-router-dom";
-import Login from "../pages/Login/Login.tsx";
-import Home from "../pages/Home/Home.tsx";
-import Signup from "../pages/Signup/Signup.tsx";
+import { Provider } from "react-redux";
+import { BrowserRouter as Router, useRoutes } from "react-router-dom";
 import ForgotPassword from "../pages/ForgotPassword/ForgotPassword.tsx";
+import Home from "../pages/Home/Home.tsx";
+import Login from "../pages/Login/Login.tsx";
+import Signup from "../pages/Signup/Signup.tsx";
+import store from "../redux/store.tsx";
 
 const AllRoutes = () => {
   const routes = useRoutes([
@@ -23,9 +20,11 @@ const AllRoutes = () => {
 };
 
 const AppRoutes = () => (
-  <Router>
-    <AllRoutes />
-  </Router>
+  <Provider store={store}>
+    <Router>
+      <AllRoutes />
+    </Router>
+  </Provider>
 );
 
 export default AppRoutes;

@@ -16,9 +16,13 @@ import CircularProgress from "@mui/material/CircularProgress";
 import { Link as RouterLink, useNavigate } from "react-router-dom";
 import Wrapper from "../../components/Layout/Wrapper.tsx";
 import "./Login.css";
+import { useSelector } from "react-redux";
+import { RootState } from "../../utils/Interfaces.tsx";
 
 const Login = () => {
   const navigate = useNavigate();
+  const userData = useSelector((state: RootState) => state.auth);
+
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     email: "",
